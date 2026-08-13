@@ -343,12 +343,12 @@ function initStatusPing() {
       .then(res => res.json())
       .then(data => {
         if (data.status === 'ONLINE' && statusText) {
-          statusText.innerHTML = `Raspberry Pi Node Online &bull; <span style="color:#00F0FF;">Port ${data.port || '8080'}</span> &bull; <span style="color:#FF0080;">zrok Ready</span>`;
+          statusText.innerHTML = `Made By Vikalp-Sharma`;
         }
       })
       .catch(() => {
         if (statusText) {
-          statusText.innerHTML = `Raspberry Pi Node Online &bull; <span style="color:#00F0FF;">Port 8080</span>`;
+          statusText.innerHTML = `Made By Vikalp-Sharma`;
         }
       });
   }

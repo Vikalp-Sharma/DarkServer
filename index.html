@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DarkMaxxer — Raspberry Pi Local AI Node & Download Portal</title>
-  <meta name="description" content="DarkMaxxer - The Ultimate Offline Autonomous AI Coding IDE. Hosted locally on Raspberry Pi using zrok proxy.">
+  <title>DarkMaxxer — Local AI Node & Download Portal</title>
+  <meta name="description" content="DarkMaxxer - The Ultimate Offline Autonomous AI Coding IDE.">
   
   <!-- Custom Logo Favicon (Favi.cio) -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="shortcut icon" href="logo.png">
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -29,16 +29,16 @@
     <!-- Navigation Header -->
     <header>
       <a href="https://github.com/Vikalp-Sharma/DarkMaxxer/" target="_blank" class="brand" title="View Official GitHub Repository">
-        <img src="logo.png" onerror="this.src='favicon.ico'" alt="DarkMaxxer Logo" class="brand-img">
+        <img src="logo.png" onerror="this.src='logo.png'" alt="DarkMaxxer Logo" class="brand-img">
         <div class="brand-text">
           <h1>DarkMaxxer</h1>
-          <p>Raspberry Pi Node &bull; DarkMatter UI</p>
+          <p>Local Node &bull; DarkMatter UI</p>
         </div>
       </a>
 
       <div class="server-badge">
         <div class="status-dot"></div>
-        <span id="status-text">Raspberry Pi Node Online &bull; Port 8080</span>
+        <span id="status-text">Made By Vikalp-Sharma</span>
       </div>
     </header>
 
@@ -46,19 +46,30 @@
     <section class="hero">
 
       <div class="hero-pill">
-        <span>⚡ Self-Hosted on Raspberry Pi &bull; Powered by zrok Proxy</span>
+        <span>⚡ Self-Hosted &bull; Powered by AirLLM</span>
       </div>
       <h2>
         The Next-Gen <span class="gradient-text">Offline Local AI</span> Coding Workspace
       </h2>
       <p>
-        DarkMaxxer is an ultra-fast, local-first pair programming IDE built with pywebview and AirLLM layer offloading. No telemetry, no cloud lock-in, and zero third-party tracking. Download our master Windows installer directly from your Raspberry Pi node or inspect our open-source codebase on GitHub.
+        DarkMaxxer is an ultra-fast, local-first pair programming IDE built with pywebview and AirLLM layer offloading. No telemetry, no cloud lock-in, and zero third-party tracking. Download our master Windows installer directly or inspect our open-source codebase on GitHub.
       </p>
 
-      <div class="cta-group">
-        <a href="https://raw.githubusercontent.com/Vikalp-Sharma/DarkServer/main/bin/DarkMaxxerSetup.exe" class="btn btn-download">
-          <span>⬇ Download DarkMaxxerSetup.exe (~56.7 MB)</span>
+      <div class="cta-group" style="display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;">
+        <a href="https://github.com/Vikalp-Sharma/DarkMaxxer/releases/download/v2.5.0/install-win.exe" class="btn btn-download">
+          <span>⬇ Download for Windows</span>
         </a>
+        
+        <div class="dropdown">
+          <button class="btn btn-download dropdown-toggle" style="cursor: pointer; font-family: inherit;">
+            <span>⬇ Download for Linux ▾</span>
+          </button>
+          <div class="dropdown-content">
+            <a href="https://github.com/Vikalp-Sharma/DarkMaxxer/releases/download/v2.5.0/install-deb.sh">Debian / Ubuntu (.deb)</a>
+            <a href="https://github.com/Vikalp-Sharma/DarkMaxxer/releases/download/v2.5.0/install-rpm.sh">Fedora / RedHat (.rpm)</a>
+          </div>
+        </div>
+
         <a href="https://github.com/Vikalp-Sharma/DarkMaxxer/" target="_blank" class="btn btn-github">
           <span>★ View Official GitHub Repository</span>
         </a>
@@ -80,12 +91,6 @@
       </div>
 
       <div class="card">
-        <div class="card-icon">🚀</div>
-        <h3>zrok Public Proxy Tunnel</h3>
-        <p>Seamlessly expose this Raspberry Pi deployment portal across the internet using `zrok share public --backend-mode proxy http://localhost:8080` without router port forwarding.</p>
-      </div>
-
-      <div class="card">
         <div class="card-icon">🪟</div>
         <h3>Native Desktop Footprint</h3>
         <p>Built on `pywebview` for an ultra-slim desktop IDE footprint. Includes an automated installer wizard (`DarkMaxxerSetup.exe`) that configures Python, pip, and PyTorch cleanly.</p>
@@ -101,10 +106,11 @@
     <!-- Documentation Center Tabs -->
     <section class="docs-section">
       <div class="tab-buttons">
-        <button class="tab-btn active" data-tab="tab-about"><img src="favicon.ico" alt="icon" style="width:16px; height:16px; vertical-align:middle; margin-right:4px;"> About & Philosophy</button>
-        <button class="tab-btn" data-tab="tab-rpi">🍓 Raspberry Pi Setup (`startserver`)</button>
+        <button class="tab-btn active" data-tab="tab-about"><img src="logo.png" alt="icon" style="width:16px; height:16px; vertical-align:middle; margin-right:4px;"> About & Philosophy</button>
         <button class="tab-btn" data-tab="tab-arch">⚙️ Core Architecture & Functions</button>
-        <button class="tab-btn" data-tab="tab-mcp">🔧 MCP Autonomous Tool Guide</button>
+        <button class="tab-btn" data-tab="tab-tools">🔧 All Built-in Tools</button>
+        <button class="tab-btn" data-tab="tab-skills">✨ Skills & Hidden Gems</button>
+        <button class="tab-btn" data-tab="tab-security">🛡️ Privacy & Security</button>
       </div>
 
       <!-- TAB 1: ABOUT -->
@@ -114,47 +120,12 @@
           DarkMaxxer is a standalone, enterprise-grade AI software development environment designed specifically for engineers who demand total hardware autonomy and zero data harvesting. By integrating custom weight-loading algorithms (`airllm`) with PyTorch's secure serialization (`torch.load(..., weights_only=True)`), DarkMaxxer delivers state-of-the-art coding intelligence locally on consumer hardware.
         </p>
 
-        <h4>Why Self-Host on Raspberry Pi?</h4>
-        <p>
-          Deploying your DarkMaxxer distribution node onto a Raspberry Pi (`RPI` directory) turns any ARM single-board computer into an always-on team development portal and download mirror. Coupled with `zrok` zero-trust proxy sharing, your developers can stream `DarkMaxxerSetup.exe` across the globe with zero firewall holes or complex VPN configurations.
-        </p>
-
         <h4>Windows Setup Guide (`DarkMaxxerSetup.exe`)</h4>
         <ul>
           <li>Click the glowing **Download DarkMaxxerSetup.exe** button above to download the ~56.7 MB single-file master installer wizard directly from this node.</li>
           <li>Double-click `DarkMaxxerSetup.exe` on your Windows 10/11 system. The installer extracts all engine components cleanly into `S:\DarkMaxxer` (or your chosen workspace path).</li>
           <li>During setup, our Tkinter installer engine (`setup_engine.py`) verifies your Python installation, creates convenient Start Menu shortcuts (`DarkMaxxer.lnk`), and verifies `airllm` + PyTorch dependencies.</li>
           <li>Launch the IDE by pressing your **Windows Key** and typing **DarkMaxxer**. No background services or unwanted startup bloat!</li>
-        </ul>
-      </div>
-
-      <!-- TAB 2: RASPBERRY PI & ZROK -->
-      <div id="tab-rpi" class="tab-content">
-        <h3>Raspberry Pi Deployment & The `startserver` Alias</h3>
-        <p>
-          The `RPI` directory inside the DarkMaxxer repository is pre-configured for instant execution on Raspberry Pi OS, Ubuntu ARM, Debian, and DietPi systems.
-        </p>
-
-        <h4>Step 1: One-Click Alias Installation (`install_alias.sh`)</h4>
-        <p>To register the global `startserver` command on your Raspberry Pi, run our installer utility once:</p>
-        <div class="code-box">
-          <code>cd RPI && bash install_alias.sh</code>
-          <button class="copy-btn" onclick="copyCode(this, 'cd RPI && bash install_alias.sh')">Copy Code</button>
-        </div>
-        <p>This automatically adds `alias startserver='bash /path/to/RPI/startserver.sh'` to your `~/.bashrc` / `~/.zshrc` profiles and creates `/usr/local/bin/startserver` for system-wide access.</p>
-
-        <h4>Step 2: Launching Your Node (`startserver`)</h4>
-        <p>From any directory on your Raspberry Pi terminal, simply type:</p>
-        <div class="code-box">
-          <code>startserver</code>
-          <button class="copy-btn" onclick="copyCode(this, 'startserver')">Copy Code</button>
-        </div>
-        <p>When executed, `startserver` performs this exact sequence automatically:</p>
-        <ul>
-          <li>**Environment & Tool Verification**: Verifies Python 3 and checks if `zrok` is installed (`curl -sSL https://get.openziti.io/install.bash | bash`).</li>
-          <li>**Spawns HTTP Node (`server.py`)**: Launches `python3 server.py --port 8080` in the background with clean process ID tracking (`rpi_server.pid`). Serves the DarkMatter UI and handles chunked file streaming for `DarkMaxxerSetup.exe`.</li>
-          <li>**Initiates zrok Public Proxy**: Runs `zrok share public --backend-mode proxy http://localhost:8080` to generate your secure worldwide HTTPS share link.</li>
-          <li>**Graceful Shutdown (`Ctrl+C`)**: Traps `SIGINT` and `SIGTERM` signals so when you terminate `zrok`, `startserver.sh` automatically shuts down `server.py` and releases port 8080 immediately!</li>
         </ul>
       </div>
 
@@ -208,22 +179,24 @@
                 • <code>launcher.py</code>: Lightweight PyInstaller bootstrap executable targeting `main.py`.
               </td>
             </tr>
-            <tr>
-              <td><code>server.py</code> (in RPI)<br><small style="color:#00F0FF;">Raspberry Pi HTTP Node</small></td>
-              <td>
-                • <code>DarkMaxxerRPIHandler.do_GET()</code>: Serves UI assets from `web/`, returns JSON statistics on `/api/status`, and streams `bin/DarkMaxxerSetup.exe` (`Content-Disposition: attachment; filename="DarkMaxxerSetup.exe"`) in 64KB chunks.
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- TAB 4: MCP TOOLS -->
-      <div id="tab-mcp" class="tab-content">
-        <h3>Model Context Protocol (`MCP`) Tool-Calling Guide</h3>
+      <!-- TAB 4: ALL BUILT-IN TOOLS -->
+      <div id="tab-tools" class="tab-content">
+        <h3>Comprehensive Tool & Agent Ecosystem</h3>
         <p>
-          DarkMaxxer empowers local AI models to act as autonomous pair programmers. When the AI determines that a code file must be created or modified, it outputs structured tool commands that `_process_tools()` intercepts and verifies.
+          DarkMaxxer empowers local AI models to act as autonomous pair programmers. The environment is equipped with a rich suite of built-in capabilities that seamlessly intercept model instructions and execute them against your local workspace.
         </p>
+
+        <h4>Core Workspace Tools</h4>
+        <ul>
+          <li><strong>File Operations:</strong> AI models can autonomously <code>read_file</code>, <code>create_file</code>, and safely modify existing project files.</li>
+          <li><strong>Regex Code Extraction:</strong> Even if your local model forgets to use strict JSON tool-calls, DarkMaxxer's parser automatically detects raw markdown code blocks (e.g., <code>```python</code>) and injects them safely.</li>
+          <li><strong>System Execution:</strong> Models can compile and execute code in isolated sandbox environments without risking host OS integrity.</li>
+          <li><strong>Project Analytics:</strong> Built-in workspace scanning provides AI models with complete context mapping of directory trees, package dependencies, and architecture patterns.</li>
+        </ul>
 
         <h4>Explicit Tool Command Syntax</h4>
         <div class="code-box">
@@ -234,14 +207,46 @@
           <code>[TOOL: read_file|path/to/script.py]</code>
           <button class="copy-btn" onclick="copyCode(this, '[TOOL: read_file|path/to/script.py]')">Copy Code</button>
         </div>
+      </div>
 
-        <h4>Intelligent Auto-Fallback Code Extraction</h4>
+      <!-- TAB 5: SKILLS & HIDDEN GEMS -->
+      <div id="tab-skills" class="tab-content">
+        <h3>Custom Skills, Plugins & Hidden Gems</h3>
         <p>
-          To ensure 100% reliability with smaller local models (such as 3B or 7B GGUF weights) that might output standard markdown code fences instead of explicit `[TOOL: ...]` tags, DarkMaxxer implements smart prompt reachability and auto-fallback:
+          DarkMaxxer isn't just an IDE—it's a programmable AI environment. Enhance your AI models by integrating customized workflow instructions ("Skills").
         </p>
+
+        <h4>Programmable AI Skills</h4>
         <ul>
-          <li>**System Prompt Enforcement**: Sends clear `role: "system"` instructions outlining available tools at the start of every inference pass (`llm_engine.py`).</li>
-          <li>**Regex Code Block Capture**: If your request asks for a new file (`"Create a python file adder.py to add two numbers"`), and the model responds with ` ```python ... ``` ` without the tool prefix, `main.py` automatically captures the code block and creates `adder.py` inside your workspace (`FileOpsServer.create_file()`).</li>
+          <li><strong>Skill Injectors:</strong> Drop custom markdown files into your `.darkmaxxer/skills/` directory. Your AI will instantly adopt these guidelines for specific tech stacks (e.g., automatically following React best-practices).</li>
+          <li><strong>Contextual Agents:</strong> Define sub-agents in `.agents/` to handle background tasks like continuous testing or linting while you focus on core logic.</li>
+        </ul>
+
+        <h4>Hidden Gems</h4>
+        <ul>
+          <li><strong>AirLLM VRAM Offloading:</strong> Got a 4GB GPU? No problem. By chunking model layers across system RAM and disk, DarkMaxxer seamlessly runs 70B models natively!</li>
+          <li><strong>Slash Commands:</strong> In the chat interface, type <code>/goal</code> to instruct the AI to continuously work on a task overnight until completion, or <code>/schedule</code> for automated health checks.</li>
+          <li><strong>Zrok Tunneling (Optional):</strong> Instantly generate public web endpoints to share your local IDE with teammates worldwide, securely.</li>
+        </ul>
+      </div>
+
+      <!-- TAB 6: PRIVACY & SECURITY -->
+      <div id="tab-security" class="tab-content">
+        <h3>Zero-Trust Data Protection</h3>
+        <p>
+          In an era where proprietary source code is routinely harvested by cloud LLM providers, DarkMaxxer takes a definitive stand: <strong>Your code is your property, and it never leaves your machine.</strong>
+        </p>
+
+        <h4>Air-Gapped by Design</h4>
+        <ul>
+          <li><strong>Offline First:</strong> DarkMaxxer is designed to operate seamlessly in completely air-gapped environments. No active internet connection is required for inference, codebase scanning, or tool execution.</li>
+          <li><strong>Zero Telemetry:</strong> There are no background trackers, crash reporters, or silent analytics packages pinging remote servers. What happens on your machine stays on your machine.</li>
+        </ul>
+
+        <h4>Enterprise-Grade Protections</h4>
+        <ul>
+          <li><strong>Safe Weight Loading:</strong> By enforcing strict <code>weights_only=True</code> parameters when loading PyTorch binaries, DarkMaxxer guarantees that malicious code execution via pickled models is mathematically impossible.</li>
+          <li><strong>Sandboxed Agents:</strong> The MCP Tool execution engine heavily restricts what autonomous AI agents can do. File paths are strictly validated against your project root to prevent path traversal attacks.</li>
         </ul>
       </div>
     </section>
