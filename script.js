@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   init3DCardTilt();
   initTabs();
   initStatusPing();
+  initScrollReveal();
+  initStickyHeader();
+  initMagneticButtons();
 });
 
 // ==========================================
@@ -251,6 +254,10 @@ function init3DCardTilt() {
       const rotateY = ((x - centerX) / centerX) * 8;
 
       card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.03, 1.03, 1.03)`;
+      
+      // Update CSS variables for flashlight effect
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
     });
 
     card.addEventListener('mouseleave', () => {
@@ -355,4 +362,63 @@ function initStatusPing() {
 
   checkStatus();
   setInterval(checkStatus, 12000);
+}
+
+// ==========================================
+// 8. Scroll Reveal Animations (Intersection Observer)
+// ==========================================
+function initScrollReveal() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  reveals.forEach(el => observer.observe(el));
+}
+
+// ==========================================
+// 9. Sticky Header Glassmorphism Effect
+// ==========================================
+function initStickyHeader() {
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+}
+
+// ==========================================
+// 10. Magnetic Buttons
+// ==========================================
+function initMagneticButtons() {
+  const magneticWraps = document.querySelectorAll('.magnetic-wrap');
+  
+  magneticWraps.forEach(wrap => {
+    const btn = wrap.querySelector('.btn');
+    if (!btn) return;
+
+    wrap.addEventListener('mousemove', (e) => {
+      const rect = wrap.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+
+    wrap.addEventListener('mouseleave', () => {
+      btn.style.transform = `translate(0px, 0px)`;
+      btn.style.transition = `transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)`;
+    });
+
+    wrap.addEventListener('mouseenter', () => {
+      btn.style.transition = `none`;
+    });
+  });
 }

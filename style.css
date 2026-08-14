@@ -6,23 +6,24 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-deep: #04010A;
-  --bg-panel: rgba(15, 10, 30, 0.65);
-  --bg-panel-hover: rgba(26, 16, 52, 0.85);
-  --border-subtle: rgba(139, 92, 246, 0.25);
-  --border-neon: rgba(255, 0, 128, 0.65);
-  --violet-glow: #7928CA;
-  --pink-glow: #FF0080;
-  --cyan-glow: #00F0FF;
+  --bg-deep: #020108;
+  --bg-panel: rgba(12, 10, 24, 0.6);
+  --bg-panel-hover: rgba(22, 18, 42, 0.75);
+  --border-subtle: rgba(126, 115, 230, 0.2);
+  --border-neon: rgba(118, 230, 255, 0.5);
+  --violet-glow: #654EA3;
+  --pink-glow: #EA8D8D;
+  --cyan-glow: #5EE7DF;
   --emerald-glow: #10B981;
-  --text-primary: #FFFFFF;
-  --text-secondary: #B4A9E8;
-  --text-muted: #736B9C;
+  --text-primary: #F3F4F6;
+  --text-secondary: #A7A3C8;
+  --text-muted: #6B688A;
   --font-head: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-code: 'JetBrains Mono', monospace;
-  --shadow-ambient: 0 20px 50px -15px rgba(121, 40, 202, 0.45);
-  --shadow-neon: 0 0 30px rgba(255, 0, 128, 0.5);
+  --shadow-ambient: 0 24px 60px -15px rgba(101, 78, 163, 0.35);
+  --shadow-neon: 0 0 35px rgba(94, 231, 223, 0.4);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -124,23 +125,33 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 28px;
-  background: rgba(18, 12, 38, 0.55);
+  background: rgba(18, 12, 38, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid transparent;
+  border-radius: 24px;
+  margin-bottom: 56px;
+  transition: all var(--transition-smooth);
+  z-index: 100;
+}
+
+header.scrolled {
+  background: rgba(18, 12, 38, 0.75);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--border-subtle);
-  border-radius: 20px;
-  margin-bottom: 56px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  transition: all var(--transition-smooth);
+  border-color: var(--border-subtle);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
 }
 
 header:hover {
-  border-color: rgba(255, 0, 128, 0.45);
-  box-shadow: 0 12px 40px rgba(121, 40, 202, 0.3);
+  border-color: rgba(94, 231, 223, 0.35);
+  box-shadow: 0 12px 40px rgba(101, 78, 163, 0.3);
 }
 
 .brand {
@@ -815,4 +826,44 @@ footer a:hover {
   .copy-btn {
     align-self: flex-end;
   }
+}
+
+/* ==========================================
+   Advanced Micro-Interactions & Overhaul Additions
+   ========================================== */
+
+/* Magnetic Button Wrapper */
+.magnetic-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+}
+
+/* Staggered Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Flashlight Hover Effect on Cards */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 1;
+}
+.card:hover::after {
+  opacity: 1;
 }

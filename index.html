@@ -43,7 +43,7 @@
     </header>
 
     <!-- Glowing Hero Section -->
-    <section class="hero">
+    <section class="hero reveal">
 
       <div class="hero-pill">
         <span>⚡ Self-Hosted &bull; Powered by AirLLM</span>
@@ -56,11 +56,13 @@
       </p>
 
       <div class="cta-group" style="display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;">
-        <a href="https://github.com/Vikalp-Sharma/DarkMaxxer/releases/download/v2.5.0/install-win.exe" class="btn btn-download">
-          <span>⬇ Download for Windows</span>
-        </a>
+        <div class="magnetic-wrap">
+          <a href="https://github.com/Vikalp-Sharma/DarkMaxxer/releases/download/v2.5.0/install-win.exe" class="btn btn-download">
+            <span>⬇ Download for Windows</span>
+          </a>
+        </div>
         
-        <div class="dropdown">
+        <div class="magnetic-wrap dropdown">
           <button class="btn btn-download dropdown-toggle" style="cursor: pointer; font-family: inherit;">
             <span>⬇ Download for Linux ▾</span>
           </button>
@@ -70,14 +72,16 @@
           </div>
         </div>
 
-        <a href="https://github.com/Vikalp-Sharma/DarkMaxxer/" target="_blank" class="btn btn-github">
-          <span>★ View Official GitHub Repository</span>
-        </a>
+        <div class="magnetic-wrap">
+          <a href="https://github.com/Vikalp-Sharma/DarkMaxxer/" target="_blank" class="btn btn-github">
+            <span>★ View Official GitHub Repository</span>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Highlights Grid with 3D Tilt Hover Cards -->
-    <section class="highlights">
+    <section class="highlights reveal">
       <div class="card">
         <div class="card-icon">🧠</div>
         <h3>100% Offline AI Inference</h3>
@@ -98,13 +102,13 @@
     </section>
 
     <!-- Documentation & Technical Reference Title -->
-    <div class="section-title">
+    <div class="section-title reveal">
       <h2>Complete Technical Documentation & Reference</h2>
       <p>Master how every module, tool, and script operates inside the DarkMaxxer architecture</p>
     </div>
 
     <!-- Documentation Center Tabs -->
-    <section class="docs-section">
+    <section class="docs-section reveal">
       <div class="tab-buttons">
         <button class="tab-btn active" data-tab="tab-about"><img src="logo.png" alt="icon" style="width:16px; height:16px; vertical-align:middle; margin-right:4px;"> About & Philosophy</button>
         <button class="tab-btn" data-tab="tab-arch">⚙️ Core Architecture & Functions</button>
